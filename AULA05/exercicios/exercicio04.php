@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário</title>
+    <title>Forms</title>
 </head>
 <body>
 
-    <!-- forms -->
    <form action="" method="GET">
-        <label for="">Digite um email: </label>
+        <label for="">Digite o email: </label>
         <input type="text" name="email" require>
         <input type="submit">
    </form> 
@@ -20,37 +19,25 @@
 
 <?php
 
-    // guardar o usuario
-    $usuario_encontrado = null;
-
-    // só executa se o email foi enviado
+    $usuarioencontrar = null;
     if (isset($_GET["email"])) {
 
-        // guardar o email
-        $emailBusca = $_GET["email"];
-
-        // json
-        $conteudo = file_get_contents("usuarios.json");
-
-        // array
-        $dados = json_decode($conteudo, true);
-
-        // percorrendo
+        $emailBuscar = $_GET["email"];
+        $conted = file_get_contents("usuarios.json");
+        $dados = json_decode($conted, true);
         foreach ($dados["usuarios"] as $usuario) {
-            if ($usuario["email"] == $emailBusca) {
-                $usuarioEncontrado = $usuario;
+            if ($usuario["email"] == $emailBuscar) {
+                $usuarioEncontrar = $usuario;
                 break;
             }
         }
-
-        // exibir resultado
-        if ($usuarioEncontrado) {
-            echo "Usuário encontrado:<br><br>";
-            echo "Nome: " . $usuarioEncontrado["nome"] . "<br>";
-            echo "Email: " . $usuarioEncontrado["email"] . "<br>";
-            echo "Id: " . $usuarioEncontrado["id"];
+        if ($usuarioEncontrar) {
+            echo "usuario encontrado:<br><br>";
+            echo "nome: " . $usuarioEncontrar["nome"] . "<br>";
+            echo "email: " . $usuarioEncontrar["email"] . "<br>";
+            echo "id: " . $usuarioEncontrar["id"];
         } else {
-            echo "Usuário não encontrado.";
+            echo "usuario não encontrado.";
         }
     }
 
