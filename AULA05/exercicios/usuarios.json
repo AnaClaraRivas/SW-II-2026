@@ -1,18 +1,18 @@
 {
     "usuarios": [
         {
-            "nome": "byanca",
-            "email": "byanca@gmail.com",
+            "nome": "ana clara",
+            "email": "anaclararivasbronzeri@gmail.com",
             "id": 1
         },
         {
-            "nome": "paula",
-            "email": "paula@gmail.com",
+            "nome": "thaís",
+            "email": "thaisqabe@gmail.com",
             "id": 2
         },
         {
-            "nome": "junior",
-            "email": "junior@gmail.com",
+            "nome": "samuel",
+            "email": "samuelrivas@gmail.com",
             "id": 3
         }
     ]
